@@ -1,0 +1,14 @@
+<mat-card *ngIf="cmp | isTrendsCmp as trendsCmp">
+  <mat-card-title-group>
+    <mat-card-title>{{ trendsCmp.name }}</mat-card-title>
+    <mat-card-subtitle>{{ trendsCmp.type }}</mat-card-subtitle>
+  </mat-card-title-group>
+  <mat-card-content>
+    {{ trendsCmp.description }}
+  </mat-card-content>
+  <mat-nav-list>
+    <mat-list-item *ngFor="let property of trendsCmp.properties">
+      <a matline>{{ property.value }}</a>
+    </mat-list-item>
+  </mat-nav-list>
+</mat-card>
