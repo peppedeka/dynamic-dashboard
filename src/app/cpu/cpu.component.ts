@@ -3,7 +3,7 @@ import {
   Component,
   ViewEncapsulation,
 } from '@angular/core';
-import { BaseCmp } from '../base/base.component';
+import { BaseCmp } from '../shared/base.component';
 
 @Component({
   selector: 'cpu',

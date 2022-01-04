@@ -5,10 +5,11 @@
   </mat-card-title-group>
   <mat-card-content>
     {{ trendsCmp.description }}
+    <mat-nav-list>
+      <mat-list-item *ngFor="let property of trendsCmp.properties">
+        <a matline>{{ property.value }}</a>
+      </mat-list-item>
+    </mat-nav-list>
   </mat-card-content>
-  <mat-nav-list>
-    <mat-list-item *ngFor="let property of trendsCmp.properties">
-      <a matline>{{ property.value }}</a>
-    </mat-list-item>
-  </mat-nav-list>
+  <button (click)="delete()">Delete me</button>
 </mat-card>

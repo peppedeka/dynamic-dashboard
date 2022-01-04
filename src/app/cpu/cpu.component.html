@@ -5,11 +5,12 @@
   </mat-card-title-group>
   <mat-card-content>
     {{ cpuCmp.description }}
+    <mat-nav-list>
+      <mat-list-item *ngFor="let property of cpuCmp.properties">
+        <a matLine>{{ property.order }}</a>
+        <a matline>{{ property.value }}</a>
+      </mat-list-item>
+    </mat-nav-list>
   </mat-card-content>
-  <mat-nav-list>
-    <mat-list-item *ngFor="let property of cpuCmp.properties">
-      <a matLine>{{ property.order }}</a>
-      <a matline>{{ property.value }}</a>
-    </mat-list-item>
-  </mat-nav-list>
+  <button (click)="delete()">Delete me</button>
 </mat-card>

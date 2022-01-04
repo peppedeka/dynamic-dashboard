@@ -5,13 +5,14 @@
   </mat-card-title-group>
   <mat-card-content>
     {{ newsCmp.description }}
+    <mat-nav-list>
+      <mat-list-item *ngFor="let item of newsCmp.items">
+        <a matLine>{{ item.title }} </a>
+        <a matline>{{ item.body }}</a>
+        <a matline>{{ item.order }}</a>
+        <a matline [href]="item.url">{{ item.url }}</a>
+      </mat-list-item>
+    </mat-nav-list>
   </mat-card-content>
-  <mat-nav-list>
-    <mat-list-item *ngFor="let item of newsCmp.items">
-      <a matLine>{{ item.title }} </a>
-      <a matline>{{ item.body }}</a>
-      <a matline>{{ item.order }}</a>
-      <a matline [href]="item.url">{{ item.url }}</a>
-    </mat-list-item>
-  </mat-nav-list>
+    <button (click)="delete()">Delete me</button>
 </mat-card>

@@ -1,8 +1,9 @@
 <ng-container *ngIf="$board | async as board">
   <h1>{{ board.title }}</h1>
-  <ng-container *ngFor="let cmp of board.components">
-    <news *ngIf="cmp.componentType === 'NewsComponent'" [cmp]="cmp"></news>
-    <cpu *ngIf="cmp.componentType === 'CPUComponent'" [cmp]="cmp"></cpu>
-    <trend *ngIf="cmp.componentType === 'TrendComponent'" [cmp]="cmp"></trend>
+  <button (click)="randomLoading()">Random loading Toggle</button>
+  <ng-container *ngFor="let cmp of board.components;let idx= index">
+    <news *ngIf="cmp!= null && cmp.componentType === 'NewsComponent'" [cmp]="cmp" (deleteEvt)=delete(idx) [appLoading]="loadingList[idx]||false"></news>
+    <cpu *ngIf="cmp!= null && cmp.componentType === 'CPUComponent'" [cmp]="cmp" (deleteEvt)=delete(idx) [appLoading]="loadingList[idx]||false"></cpu>
+    <trend *ngIf="cmp!= null && cmp.componentType === 'TrendComponent'" [cmp]="cmp" (deleteEvt)=delete(idx) [appLoading]="loadingList[idx]||false"></trend>
   </ng-container>
 </ng-container>

@@ -7,9 +7,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CpuModule } from './cpu/cpu.module';
 import { NewsModule } from './news/news.module';
 import { TrendsModule } from './trends/trends.module';
+import { MatDialogModule } from '@angular/material/dialog';
+import { LoadingDirective } from './shared/loading.directive';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LoadingDirective],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -18,6 +20,7 @@ import { TrendsModule } from './trends/trends.module';
     CpuModule,
     NewsModule,
     TrendsModule,
+    MatDialogModule,
   ],
   bootstrap: [AppComponent],
 })
